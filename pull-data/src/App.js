@@ -444,7 +444,7 @@ export class App extends React.Component {
                             this.setState({display: <CSVLink key={this.generateDate()} data={this.state.data} headers={this.state.headers}>Download me</CSVLink>})
                         });
 
-                        if (i < 2/*games.length */) { loop(); }
+                        if (i < games.length ) { loop(); }
                     }, 3000)
                 }
                 loop();
