@@ -243,25 +243,25 @@ export class App extends React.Component {
                                         teamOneCs += player.stats.totalMinionsKilled;
                                         teamOneVisionScore += player.stats.visionScore;
 
-                                        for (let times in player.timeline.csDiffPerMinDeltas) {
-                                            if (player.timeline.csDiffPerMinDeltas.hasOwnProperty(times)) {
-                                                avgCsDiff += player.timeline.csDiffPerMinDeltas[times];
+                                        if (player.timeline.csDiffPerMinDeltas != null) {
+                                            for (let times in player.timeline.csDiffPerMinDeltas) {
+                                                if (player.timeline.csDiffPerMinDeltas.hasOwnProperty(times)) {
+                                                    avgCsDiff += player.timeline.csDiffPerMinDeltas[times];
+                                                }
+                                                
+                                                if (player.timeline.damageTakenDiffPerMinDeltas.hasOwnProperty(times)) {
+                                                    avgDmgDiff += player.timeline.damageTakenDiffPerMinDeltas[times];
+                                                }
+    
+                                                if (player.timeline.xpDiffPerMinDeltas.hasOwnProperty(times)) {
+                                                    avgXpDiff += player.timeline.xpDiffPerMinDeltas[times];
+                                                }
+    
                                             }
-                                            
-                                            if (player.timeline.damageTakenDiffPerMinDeltas.hasOwnProperty(times)) {
-                                                avgDmgDiff += player.timeline.damageTakenDiffPerMinDeltas[times];
-                                            }
-
-                                            if (player.timeline.xpDiffPerMinDeltas.hasOwnProperty(times)) {
-                                                avgXpDiff += player.timeline.xpDiffPerMinDeltas[times];
-                                            }
-
+                                            avgCsDiff /= Object.keys(player.timeline.csDiffPerMinDeltas).length;
+                                            avgDmgDiff /= Object.keys(player.timeline.damageTakenDiffPerMinDeltas).length;
+                                            avgXpDiff /= Object.keys(player.timeline.xpDiffPerMinDeltas).length;
                                         }
-                                        avgCsDiff /= Object.keys(player.timeline.csDiffPerMinDeltas).length;
-                                        avgDmgDiff /= Object.keys(player.timeline.damageTakenDiffPerMinDeltas).length;
-                                        avgXpDiff /= Object.keys(player.timeline.xpDiffPerMinDeltas).length;
-
-                                        
 
                                         switch (player.timeline.lane) {
                                             case "TOP":
