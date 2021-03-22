@@ -445,7 +445,7 @@ export class App extends React.Component {
                         });
 
                         if (i < games.length ) { loop(); }
-                    }, 3000)
+                    }, 2000)
                 }
                 loop();
                 console.log(this.state);
