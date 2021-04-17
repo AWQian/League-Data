@@ -1,9 +1,10 @@
 # League of legend project coding files
 
 ## Our data：
-1. data_nomissing.csv: Data with no missing value
-2. data_cleaned.csv: Data after cleanning
-3. data_featureselection.csv: data with feature selected variables
+1. data.csv：raw dataset
+2. data_nomissing.csv: Data with no missing value
+3. data_cleaned.csv: Data after cleanning
+4. data_featureselection.csv: data with feature selected variables
 
 ## Coding
 1. cs351_project_data exploration.ipynb: Data exploration, and include some steps for feature selection
